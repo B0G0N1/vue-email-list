@@ -9,17 +9,18 @@
 </head>
 <body>
     <div id="app">
+        <!-- Header -->
         <header class="d-flex align-items-center justify-content-between px-3">
             <h1 class="fs-3 fs-bold text-white m-0">Vue Email List</h1>
-            <button class="btn btn-primary p-2" @click="generateEmail">Genera Email</button>
+            <!-- Buttone per generare lista -->
+            <button class="bg-white text-primary fw-bold border-0 rounded-2 p-2" @click="generateEmailList">Generate Email</button>
         </header>
         <main>
-            <div class="container">
-                <ul>
-                    <li v-for="email in 10" :key="email">
-                    {{ email }}
-                    </li>
-                </ul>
+            <!-- Ciclo lista email per visualizzare email -->
+            <div class="container py-3">
+                <div v-for="(item, index) in emailList" :key="index">
+                    <div class="border rounded-2 p-2 my-2">{{ item }}</div>
+                </div>
             </div>
         </main>
     </div>
